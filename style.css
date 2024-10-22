@@ -17,7 +17,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: neue;
+  font-family: neue , sans-serif;
 }
 
 html, body {
@@ -346,50 +346,40 @@ nav h3{
   background-position:center;
 }
 
-#page4{
-  min-height: 100vh;
+#page4 {
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  display: flex;
-  background-color: black;
+  padding: 20px;
+  background-color: #EFEAE3; /* Light background to ensure contrast */
 }
 
-#page4{
-   min-height: 100vh;
-   width: 100%;
+#page4 .left {
+  width: 45vw;
+  color: #333; /* Darker text for readability */
+  transform: translateX(0); /* Remove any translation */
 }
 
-#page4 .right{
-  width: 55vw;
-    height: 100%;
-    /* border-radius: ; */
-    /* background-color: blueviolet; */
-    float: right;
-    background-size: cover;
-    background-position:center;
+#page4 .left h1 {
+  font-size: 4vw;
+  margin: 10px 0;
+  color: #333; /* Ensure it contrasts against the background */
 }
 
-.right > img{
-  border-radius: 1.5vw;
+#page4 .left p {
+  width: 80%;
+  margin: 10px 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+#page4 .right {
+  width: 45vw;
+}
+
+#page4 .right img {
   width: 100%;
-}
-
-#page4 .left{
-    width:45vw;
-    height: 100%;
-    color: #EFEAE3;
-    transform: translateX(20%);
-    /* background-color: #c4c4; */
-    float: left;
-}
-#page4 .left p{
-  width: 50% ;
-  color: #EFEAE3;
-  /* border-radius: 10px; */  
-}
-#page4 .left h1{
-  width: 90%;
-    font-size: 4.7vw;
+  height: auto;
 }
 
 #page5{
@@ -708,5 +698,65 @@ nav h3{
   #loader h1{
       font-size: 9vw;
     
+  }
+}
+
+
+/* Responsive Design for smaller screens */
+
+@media screen and (max-width: 1024px) {
+  #page4 .left {
+    width: 50vw;
+    transform: translateX(0);
+  }
+  
+  #page4 .right {
+    width: 50vw;
+  }
+  
+  #page4 .left h1 {
+    font-size: 4vw;
+  }
+  
+  #page4 .left p {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #page4 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  #page4 .left, 
+  #page4 .right {
+    width: 100%;
+    text-align: center;
+  }
+  
+  #page4 .left h1 {
+    font-size: 5vw;
+  }
+  
+  #page4 .left p {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  #page4 .right img {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #page4 .left h1 {
+    font-size: 6vw;
+  }
+  
+  #page4 .left p {
+    width: 95%;
+    font-size: 3.5vw;
   }
 }
